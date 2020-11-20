@@ -202,18 +202,17 @@ export default class Home extends Component {
           </View>
           <View>
             <Label style={labelStyle}>Shop Category</Label>
-            <Picker
-              selectedValue={shopcategory}
-              style={{ height: 50, width: 100 }}
-              onValueChange={(shopcategory, itemIndex) =>
-                this.setState({ shopcategory})
-              }>
-                <FlatList
-                // data={category}
-                renderItem={({y})=>(<Picker.Item label={y.category} value={y.category} />)}
-                />  
-              <Picker.Item label="Other" value="Other" />
-            </Picker>
+            <Item style={inputbox} bordered>
+              <Picker
+                selectedValue={shopcategory}
+                style={{ height: 50, width: '100%' }}
+                onValueChange={(shopcategory) => this.setState({ shopcategory })}>
+                {
+                  category.map(({ id, category }) => <Picker.Item label={category} value={category} key={id} />)
+                }
+                <Picker.Item label="Other" value="Other" />
+              </Picker>
+            </Item>
           </View>
           {shopcategory.length ? (
             shopcategory == 'Other' ? (
