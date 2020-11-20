@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image, StyleSheet, ActivityIndicator } from 'react-native'
+import { Image, StyleSheet, ActivityIndicator } from 'react-native'
 import { Container, Content } from 'native-base'
 import { PRIMARY_COLOR } from '../Colors'
 import AsyncStorage from '@react-native-community/async-storage'
